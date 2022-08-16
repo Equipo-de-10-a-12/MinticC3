@@ -1,3 +1,7 @@
 prueba
 
+<<<<<<< HEAD
 Este es el cambio realizado por Alvaro Restrepo Ramirez
+=======
+commit realizado por Andres Garzon
+>>>>>>> 0a2763d62834c057991215894a638eb6f0731e8b
