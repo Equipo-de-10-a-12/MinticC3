@@ -21,3 +21,7 @@ Pull request felipe salazar crear un cambio en la rama develop
 
 Se hizo este cambio en la rama develop
 >>>>>>> 6940f70441f601575807c95aacb4327341c3f768
+
+
+
+Pull request Andres Garzon x2 de develop a master
