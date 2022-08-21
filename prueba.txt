@@ -25,3 +25,5 @@ Se hizo este cambio en la rama develop
 
 
 Pull request Andres Garzon x2 de develop a master
+
+Pull request Alvaro Restrepo develop
