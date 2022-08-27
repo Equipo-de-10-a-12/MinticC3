@@ -54,5 +54,16 @@ public class empleado{
         this.id_empresa = id_empresa;
         this.id_rol = id_rol;
     }
+
+    @Override
+    public String toString() {
+        return "empleado{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", email='" + email + '\'' +
+                ", id_empresa=" + id_empresa +
+                ", id_rol=" + id_rol +
+                '}';
+    }
 }
 
