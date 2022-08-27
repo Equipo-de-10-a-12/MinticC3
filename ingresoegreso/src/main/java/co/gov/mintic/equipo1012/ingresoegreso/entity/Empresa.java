@@ -8,11 +8,19 @@ public class Empresa {
     private String nitEmpresa;
 
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> d47d45415bb95026ef31c97fac0ca7eaf5180968
     public Empresa(String nombreEmpresa, String direccionEmpresa, String telefonoEmpresa, String nitEmpresa) {
         this.nombreEmpresa = nombreEmpresa;
         this.direccionEmpresa = direccionEmpresa;
         this.telefonoEmpresa = telefonoEmpresa;
         this.nitEmpresa = nitEmpresa;
+<<<<<<< HEAD
+
+=======
+>>>>>>> d47d45415bb95026ef31c97fac0ca7eaf5180968
     }
 
     public String getNombreEmpresa() {
@@ -47,6 +55,10 @@ public class Empresa {
         this.nitEmpresa = nitEmpresa;
     }
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> d47d45415bb95026ef31c97fac0ca7eaf5180968
     @Override
     public String toString() {
         return "Empresa{" +
