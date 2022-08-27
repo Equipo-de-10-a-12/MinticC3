@@ -35,5 +35,20 @@ public class IngresoegresoApplication {
         System.out.println(md.getMontoMovimiento());
         System.out.println(md.getConceptoMovimiento());
         System.out.println(md.getOidEmpleado());
-    }
+
+        Empresa empresa1 = new Empresa("apple","cra22#11a","333442","80095748");
+
+        empresa1.getDireccionEmpresa();
+	    empresa1.getNitEmpresa();
+	    empresa1.getNombreEmpresa();
+	    empresa1.getTelefonoEmpresa();
+
+	    System.out.println(empresa1);
+
+	    empresa1.setDireccionEmpresa("cra22#00-1");
+	    empresa1.setNitEmpresa("222333444");
+	    empresa1.setNombreEmpresa("xioami");
+	    empresa1.setTelefonoEmpresa("33344455");
+
+	    System.out.println(empresa1);
 }

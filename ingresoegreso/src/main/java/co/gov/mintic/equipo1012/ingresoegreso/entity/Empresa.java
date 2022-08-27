@@ -6,18 +6,15 @@ public class Empresa {
     private String direccionEmpresa;
     private String telefonoEmpresa;
     private String nitEmpresa;
-    private Rol rol;
-    private boolean estado;
-    private Perfil perfil;
 
 
-    public Empresa(String nombreEmpresa, String direccionEmpresa, String telefonoEmpresa, String nitEmpresa, Rol rol, boolean estado) {
+
+    public Empresa(String nombreEmpresa, String direccionEmpresa, String telefonoEmpresa, String nitEmpresa) {
         this.nombreEmpresa = nombreEmpresa;
         this.direccionEmpresa = direccionEmpresa;
         this.telefonoEmpresa = telefonoEmpresa;
         this.nitEmpresa = nitEmpresa;
-        this.rol = rol;
-        this.estado = estado;
+
     }
 
     public String getNombreEmpresa() {
@@ -52,29 +49,6 @@ public class Empresa {
         this.nitEmpresa = nitEmpresa;
     }
 
-    public Rol getRol() {
-        return rol;
-    }
-
-    public void setRol(Rol rol) {
-        this.rol = rol;
-    }
-
-    public boolean isEstado() {
-        return estado;
-    }
-
-    public void setEstado(boolean estado) {
-        this.estado = estado;
-    }
-
-    public Perfil getPerfil() {
-        return perfil;
-    }
-
-    public void setPerfil(Perfil perfil) {
-        this.perfil = perfil;
-    }
 
     @Override
     public String toString() {
@@ -83,9 +57,6 @@ public class Empresa {
                 ", direccionEmpresa='" + direccionEmpresa + '\'' +
                 ", telefonoEmpresa='" + telefonoEmpresa + '\'' +
                 ", nitEmpresa='" + nitEmpresa + '\'' +
-                ", rol=" + rol +
-                ", estado=" + estado +
-                ", perfil=" + perfil +
                 '}';
     }
 }
