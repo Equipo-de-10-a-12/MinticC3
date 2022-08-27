@@ -1,6 +1,7 @@
 package co.gov.mintic.equipo1012.ingresoegreso;
 
 import co.gov.mintic.cartera.ingresoegreso.entity.empleado;
+import co.gov.mintic.equipo1012.ingresoegreso.entity.Empresa;
 import co.gov.mintic.equipo1012.ingresoegreso.entity.MovimientoDinero;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -50,5 +51,20 @@ public class IngresoegresoApplication {
         System.out.println(emp.getId_empresa());
         emp.setId_rol(40);
         System.out.println(emp.getId_rol());
+
+        //Instancia empresa
+        Empresa empresa1 = new Empresa("apple","cra20numero4","4456789","11389087");
+        empresa1.getDireccionEmpresa();
+        empresa1.getNitEmpresa();
+        empresa1.getNombreEmpresa();
+        empresa1.getTelefonoEmpresa();
+
+        System.out.println(empresa1);
+        empresa1.setDireccionEmpresa("cra22#00-1");
+        empresa1.setNitEmpresa("222333444");
+        empresa1.setNombreEmpresa("xioami");
+        empresa1.setTelefonoEmpresa("33344455");
+
+        System.out.println(empresa1);
     }
 }
