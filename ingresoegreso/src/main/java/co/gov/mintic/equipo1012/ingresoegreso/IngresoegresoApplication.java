@@ -1,6 +1,6 @@
 package co.gov.mintic.equipo1012.ingresoegreso;
 
-import co.gov.mintic.cartera.ingresoegreso.entity.empleado;
+import co.gov.mintic.equipo1012.ingresoegreso.entity.empleado;
 import co.gov.mintic.equipo1012.ingresoegreso.entity.Empresa;
 import co.gov.mintic.equipo1012.ingresoegreso.entity.MovimientoDinero;
 import org.springframework.boot.SpringApplication;
@@ -57,7 +57,7 @@ public class IngresoegresoApplication {
 
 	    System.out.println(empresa1);
         //Instancia de clase empleado
-        empleado emp = new empleado(1, "Luis", "midominio@midominio.com", 10, 20);
+        empleado emp = new empleado(1, "Luis", "midominio@midominio.com");
         //Lectura y modificacion de nombre, email, empresa y rol de empleado
         System.out.println(emp);
         emp.setId(1);
@@ -66,9 +66,6 @@ public class IngresoegresoApplication {
         //System.out.println(emp.getNombre());
         emp.setEmail("midominio2@midominio2.com");
         //System.out.println(emp.getEmail());
-        emp.setId_empresa(30);
-        //System.out.println(emp.getId_empresa());
-        emp.setId_rol(40);
         //System.out.println(emp.getId_rol());
          System.out.println(emp);
 

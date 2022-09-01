@@ -1,11 +1,11 @@
-package co.gov.mintic.cartera.ingresoegreso.entity;
+package co.gov.mintic.equipo1012.ingresoegreso.entity;
 
-public class rol {
+public class Rol {
     private long idRol;
     private String descripcion;
     private boolean estado;
 
-    public rol(long idRol, String descripcion, boolean estado) {
+    public Rol(long idRol, String descripcion, boolean estado) {
         this.idRol = idRol;
         this.descripcion = descripcion;
         this.estado = estado;
