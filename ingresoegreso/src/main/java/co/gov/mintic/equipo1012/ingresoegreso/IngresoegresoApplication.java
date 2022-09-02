@@ -12,11 +12,8 @@ public class IngresoegresoApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(IngresoegresoApplication.class, args);
-        //System.out.println("Ingreso Egreso!");
-        double MontoMovimiento = 100;
-        int OidEmpleado = 5;
-        String ConceptoMovimiento = "Ingreso";
 
+<<<<<<< HEAD
         //Instancia de la clase
         MovimientoDinero md = new MovimientoDinero(MontoMovimiento, OidEmpleado, ConceptoMovimiento);
 
@@ -70,6 +67,8 @@ public class IngresoegresoApplication {
         //System.out.println(emp.getEmail());
         //System.out.println(emp.getId_rol());
          System.out.println(emp);
+=======
+>>>>>>> f023da4406f12ccc14f2c36b5c20670a8a449556
 
     }
 
