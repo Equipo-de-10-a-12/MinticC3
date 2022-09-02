@@ -1,5 +1,6 @@
 package co.gov.mintic.equipo1012.ingresoegreso;
 
+import co.gov.mintic.equipo1012.ingresoegreso.entity.Rol;
 import co.gov.mintic.equipo1012.ingresoegreso.entity.empleado;
 import co.gov.mintic.equipo1012.ingresoegreso.entity.Empresa;
 import co.gov.mintic.equipo1012.ingresoegreso.entity.MovimientoDinero;
@@ -56,8 +57,9 @@ public class IngresoegresoApplication {
 	    empresa1.setTelefonoEmpresa("33344455");
 
 	    System.out.println(empresa1);
+        Rol rol1 = new Rol(100, "Admin", true);
         //Instancia de clase empleado
-        empleado emp = new empleado(1, "Luis", "midominio@midominio.com");
+        empleado emp = new empleado(1, "Luis", "midominio@midominio.com", rol1);
         //Lectura y modificacion de nombre, email, empresa y rol de empleado
         System.out.println(emp);
         emp.setId(1);

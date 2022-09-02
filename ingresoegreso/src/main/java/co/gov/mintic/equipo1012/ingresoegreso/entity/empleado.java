@@ -1,8 +1,5 @@
 package co.gov.mintic.equipo1012.ingresoegreso.entity;
 
-import co.gov.mintic.equipo1012.ingresoegreso.entity.Rol;
-
-
 public class empleado{
     private int id;
     private String nombre;
@@ -41,10 +38,11 @@ public class empleado{
         this.email = email;
     }
 
-    public empleado(int id, String nombre, String email) {
+    public empleado(int id, String nombre, String email, Rol rol) {
         this.id = id;
         this.nombre = nombre;
         this.email = email;
+        this.rol = rol;
 
     }
 
