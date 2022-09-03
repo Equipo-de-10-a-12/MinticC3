@@ -1,5 +1,6 @@
 package co.gov.mintic.equipo1012.ingresoegreso;
 
+import co.gov.mintic.equipo1012.ingresoegreso.entity.Rol;
 import co.gov.mintic.equipo1012.ingresoegreso.entity.empleado;
 import co.gov.mintic.equipo1012.ingresoegreso.entity.Empresa;
 import co.gov.mintic.equipo1012.ingresoegreso.entity.MovimientoDinero;

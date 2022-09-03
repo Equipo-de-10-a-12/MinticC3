@@ -1,46 +1,97 @@
 package co.gov.mintic.equipo1012.ingresoegreso.entity;
 
-public class MovimientoDinero {
-    private double MontoMovimiento;
-    private int OidEmpleado;
-    private String ConceptoMovimiento;
+import java.util.Date;
 
-    public MovimientoDinero(double montoMovimiento, int oidEmpleado, String conceptoMovimiento) {
-        MontoMovimiento = montoMovimiento;
-        OidEmpleado = oidEmpleado;
-        ConceptoMovimiento = conceptoMovimiento;
+public class MovimientoDinero {
+
+    private long id;
+    private double montoMovimiento;
+    private int oidEmpleado;
+    private String conceptoMovimiento;
+
+    private long idEmpresa;
+
+    private Date fechaCreacion;
+
+    private Date fechaActualizacion;
+
+    public MovimientoDinero(double montoMovimiento, int oidEmpleado, String conceptoMovimiento, long idEmpresa,
+                            Date fechaCreacion, Date fechaActualizacion) {
+        this.montoMovimiento = montoMovimiento;
+        this.oidEmpleado = oidEmpleado;
+        this.conceptoMovimiento = conceptoMovimiento;
+        this.idEmpresa = idEmpresa;
+        this.fechaCreacion = fechaCreacion;
+        this.fechaActualizacion = fechaActualizacion;
+    }
+
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public double getMontoMovimiento() {
-        return MontoMovimiento;
+        return montoMovimiento;
     }
 
     public void setMontoMovimiento(double montoMovimiento) {
-        MontoMovimiento = montoMovimiento;
+        this.montoMovimiento = montoMovimiento;
     }
 
     public int getOidEmpleado() {
-        return OidEmpleado;
+        return oidEmpleado;
     }
 
     public void setOidEmpleado(int oidEmpleado) {
-        OidEmpleado = oidEmpleado;
+        this.oidEmpleado = oidEmpleado;
     }
 
     public String getConceptoMovimiento() {
-        return ConceptoMovimiento;
+        return conceptoMovimiento;
     }
 
     public void setConceptoMovimiento(String conceptoMovimiento) {
-        ConceptoMovimiento = conceptoMovimiento;
+        this.conceptoMovimiento = conceptoMovimiento;
+    }
+
+    public long getIdEmpresa() {
+        return idEmpresa;
+    }
+
+    public void setIdEmpresa(long idEmpresa) {
+        this.idEmpresa = idEmpresa;
+    }
+
+    public Date getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(Date fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
+    public Date getFechaActualizacion() {
+        return fechaActualizacion;
+    }
+
+    public void setFechaActualizacion(Date fechaActualizacion) {
+        this.fechaActualizacion = fechaActualizacion;
     }
 
     @Override
     public String toString() {
         return "MovimientoDinero{" +
-                "MontoMovimiento=" + MontoMovimiento +
-                ", OidEmpleado=" + OidEmpleado +
-                ", ConceptoMovimiento='" + ConceptoMovimiento + '\'' +
+                "id=" + id +
+                ", MontoMovimiento=" + montoMovimiento +
+                ", OidEmpleado=" + oidEmpleado +
+                ", ConceptoMovimiento='" + conceptoMovimiento + '\'' +
+                ", idEmpresa=" + idEmpresa +
+                ", fechaCreacion=" + fechaCreacion +
+                ", fechaActualizacion=" + fechaActualizacion +
                 '}';
     }
 }
