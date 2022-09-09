@@ -1,5 +1,11 @@
 
 
-prueba de pull release cristian gonzalez
+HOLA ESTA ES EL CAMBIO REALIZADO POR FELIPE SALAZAR
 
-prueba de pull release andres garzon
+
+Pull request Andres Garzon x2 de develop a master
+
+Pull request Alvaro Restrepo develop
+
+eFULL REQUEST CAMILO  CASI QUE NO JAJAJ
+
