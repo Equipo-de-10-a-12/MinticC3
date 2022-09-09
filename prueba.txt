@@ -1,27 +1,6 @@
-prueba
 
-<<<<<<< HEAD
-HOLA ESTE CAMBIO LO RELIZO CAMILO URBME
-=======
-<<<<<<< HEAD
-Este es el cambio realizado por Alvaro Restrepo Ramirez
-=======
-commit realizado por Andres Garzon
->>>>>>> 0a2763d62834c057991215894a638eb6f0731e8b
->>>>>>> 038d4d9785009c5a930f721c1acd6479683715a0
 
 HOLA ESTA ES EL CAMBIO REALIZADO POR FELIPE SALAZAR
-
-<<<<<<< HEAD
-Pull request felipe salazar
-
-Pull request Andres Garzon
-=======
-Pull request felipe salazar crear un cambio en la rama develop
-
-Se hizo este cambio en la rama develop
->>>>>>> 6940f70441f601575807c95aacb4327341c3f768
-
 
 
 Pull request Andres Garzon x2 de develop a master
@@ -29,3 +8,4 @@ Pull request Andres Garzon x2 de develop a master
 Pull request Alvaro Restrepo develop
 
 eFULL REQUEST CAMILO  CASI QUE NO JAJAJ
+
