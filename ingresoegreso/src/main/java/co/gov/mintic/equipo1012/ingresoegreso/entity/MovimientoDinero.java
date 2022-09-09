@@ -1,22 +1,37 @@
 package co.gov.mintic.equipo1012.ingresoegreso.entity;
 
+import javax.persistence.*;
 import java.util.Date;
+@Entity
+@Table(name="movimientos")
 
 public class MovimientoDinero {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
     private long id;
+
+    @Column(nullable = false)
     private double montoMovimiento;
+    //@ManyToOne
+    //@JoinColumn(nullable = false)
+    @Column(nullable = false)
     private int oidEmpleado;
+    @Column(nullable = false)
     private String conceptoMovimiento;
-
+    //@ManyToOne
+    //@JoinColumn(nullable = false)
+    @Column(nullable = false)
     private long idEmpresa;
-
+    @Column(nullable = false)
     private Date fechaCreacion;
-
+    @Column()
     private Date fechaActualizacion;
 
-    public MovimientoDinero(double montoMovimiento, int oidEmpleado, String conceptoMovimiento, long idEmpresa,
-                            Date fechaCreacion, Date fechaActualizacion) {
+    //public MovimientoDinero(double montoMovimiento, int oidEmpleado, String conceptoMovimiento, long idEmpresa,
+      //                      Date fechaCreacion, Date fechaActualizacion) {
+    public MovimientoDinero() {
         this.montoMovimiento = montoMovimiento;
         this.oidEmpleado = oidEmpleado;
         this.conceptoMovimiento = conceptoMovimiento;
