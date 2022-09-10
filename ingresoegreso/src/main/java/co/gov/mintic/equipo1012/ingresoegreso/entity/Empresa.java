@@ -1,19 +1,52 @@
 package co.gov.mintic.equipo1012.ingresoegreso.entity;
 
+import javax.persistence.*;
+import java.util.Date;
+@Entity
+@Table(name = "empresas")
 public class Empresa {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
+    private long Id;
+    @Column(nullable = false)
     private String nombreEmpresa;
+    @Column(nullable = false)
     private String direccionEmpresa;
+    @Column(nullable = false)
     private String telefonoEmpresa;
+    @Column(nullable = false)
     private String nitEmpresa;
+    @Column(nullable = true)
+
+    private Date fechaCreacion;
+    @Column(nullable = true)
+
+    private Date fechaActualizacion;
 
 
-    public Empresa(String nombreEmpresa, String direccionEmpresa, String telefonoEmpresa, String nitEmpresa) {
-        this.nombreEmpresa = nombreEmpresa;
-        this.direccionEmpresa = direccionEmpresa;
-        this.telefonoEmpresa = telefonoEmpresa;
-        this.nitEmpresa = nitEmpresa;
+    public long getId() {
+        return Id;
+    }
 
+    public void setId(long id) {
+        Id = id;
+    }
+
+    public Date getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(Date fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
+    public Date getFechaActualizacion() {
+        return fechaActualizacion;
+    }
+
+    public void setFechaActualizacion(Date fechaActualizacion) {
+        this.fechaActualizacion = fechaActualizacion;
     }
 
     public String getNombreEmpresa() {
@@ -52,10 +85,13 @@ public class Empresa {
     @Override
     public String toString() {
         return "Empresa{" +
-                "nombreEmpresa='" + nombreEmpresa + '\'' +
+                "Id=" + Id +
+                ", nombreEmpresa='" + nombreEmpresa + '\'' +
                 ", direccionEmpresa='" + direccionEmpresa + '\'' +
                 ", telefonoEmpresa='" + telefonoEmpresa + '\'' +
                 ", nitEmpresa='" + nitEmpresa + '\'' +
+                ", fechaCreacion=" + fechaCreacion +
+                ", fechaActualizacion=" + fechaActualizacion +
                 '}';
     }
 }
