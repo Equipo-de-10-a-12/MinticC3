@@ -34,9 +34,12 @@ public class MovimientoDineroService implements IMovimientoDineroService{
     @Override
     public MovimientoDinero ActualizarCampo(long id,int oidEmpleado){
 
-        MovimientoDinero md= findById(id);
-        md.setOidEmpleado(oidEmpleado);
-        return md;
+        Optional<MovimientoDinero> md=movimientoDineroRepository.findById(id);
+        md.get().setOidEmpleado(oidEmpleado);
+        //MovimientoDinero md= findById(id);
+        //md.setOidEmpleado(oidEmpleado);
+        movimientoDineroRepository.save(md.get());
+        return md.get();
     }
     @Override
     public void EliminarMonto(long id){
