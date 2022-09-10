@@ -1,7 +1,6 @@
 package co.gov.mintic.equipo1012.ingresoegreso.controller;
 
 import co.gov.mintic.equipo1012.ingresoegreso.entity.MovimientoDinero;
-import co.gov.mintic.equipo1012.ingresoegreso.entity.Rol;
 import co.gov.mintic.equipo1012.ingresoegreso.entity.empleado;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,14 +19,8 @@ public class empleadoRestController {
         Date fechaCreacion = new java.sql.Date(2022-1900,8-1,5);
         Date fechaActualizacion = new java.sql.Date(2022-1900,8-1,15);
 
-        Rol rol1 = new Rol(100, "Admin", true);
-        empleado emp = new empleado(1, "Maria", "midominio@midominio.com", rol1, fechaCreacion, fechaActualizacion);
+        empleado emp = new empleado(1, "Maria", "midominio@midominio.com", fechaCreacion, fechaActualizacion);
 
-        emp.setId(1);
-        emp.setNombre("Jorge");
-        emp.setEmail("midominio2@midominio2.com");
-        emp.setFechaCreacion(fechaCreacion);
-        emp.setFechaActualizacion(fechaActualizacion);
 
         return emp;
     }
@@ -40,11 +33,6 @@ public class empleadoRestController {
         Date fechaCreacion = new java.sql.Date(2022-1900,8-1,5);
         Date fechaActualizacion = new java.sql.Date(2022-1900,8-1,15);
 
-        Rol rol1 = new Rol(100, "Admin", true);
-        empleado emp1 = new empleado(2, "Maria", "midominio@midominio.com", rol1, fechaCreacion, fechaActualizacion);
-        mostrarem.add(emp1);
-        empleado emp2 = new empleado(3, "Luis", "midominio2@midominio2.com", rol1, fechaCreacion, fechaActualizacion);
-        mostrarem.add(emp2);
 
         return mostrarem;
     }
@@ -55,8 +43,8 @@ public class empleadoRestController {
         Date fechaCreacion = new java.sql.Date(2022-1900,8-1,5);
         Date fechaActualizacion = new java.sql.Date(2022-1900,8-1,15);
 
-        Rol rol1 = new Rol(200, "User", true);
-        empleado emp = new empleado(4, "Martha", "midominio@midominio.com", rol1, fechaCreacion, fechaActualizacion);
+
+        empleado emp = new empleado(4, "Martha", "midominio@midominio.com", fechaCreacion, fechaActualizacion);
 
         emp1.setId(2);
         emp1.setNombre(emp1.getNombre());
