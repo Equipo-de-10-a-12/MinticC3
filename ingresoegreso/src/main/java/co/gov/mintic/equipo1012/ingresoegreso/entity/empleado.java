@@ -1,14 +1,31 @@
 package co.gov.mintic.equipo1012.ingresoegreso.entity;
 
 import java.util.Date;
+import javax.persistence.*;
+
+@Entity
+@Table(name="empleados")
 
 public class empleado{
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
+    private long id;
+    @Column(nullable = false)
     private String nombre;
+    @Column(nullable = false)
     private String email;
 
+    @Column(nullable = false)
     private Date fechaCreacion;
+    @Column()
     private Date fechaActualizacion;
+    @Column(nullable = false)
+    private String imagen;
+    @Column(nullable = false)
+    private String telefono;
+    @Column(nullable = false)
+    private Roles rol;
 
 
     public String getNombre() {
@@ -18,10 +35,10 @@ public class empleado{
         this.nombre = nombre;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -46,14 +63,35 @@ public class empleado{
         this.fechaActualizacion = fechaActualizacion;
     }
 
-    public empleado(int id, String nombre, String email, Date fechaCreacion, Date fechaActualizacion) {
-        this.id = id;
-        this.nombre = nombre;
-        this.email = email;
-        this.fechaCreacion = fechaCreacion;
-        this.fechaActualizacion = fechaActualizacion;
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public Roles getRol() {
+        return rol;
+    }
+
+    public void setRol(Roles rol) {
+        this.rol = rol;
+    }
+
+    public empleado() {
 
     }
+
+
 
     @Override
     public String toString() {
@@ -63,6 +101,9 @@ public class empleado{
                 ", email='" + email + '\'' +
                 ", fechaCreacion=" + fechaCreacion +
                 ", fechaActualizacion=" + fechaActualizacion +
+                ", imagen='" + imagen + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", rol=" + rol +
                 '}';
     }
 }
