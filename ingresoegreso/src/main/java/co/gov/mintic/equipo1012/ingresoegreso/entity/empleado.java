@@ -6,16 +6,10 @@ public class empleado{
     private int id;
     private String nombre;
     private String email;
-    private Rol rol;
+
     private Date fechaCreacion;
     private Date fechaActualizacion;
 
-    public Rol getRol() {
-        return rol;
-    }
-    public void setRol(Rol rol) {
-        this.rol = rol;
-    }
 
     public String getNombre() {
         return nombre;
@@ -52,11 +46,10 @@ public class empleado{
         this.fechaActualizacion = fechaActualizacion;
     }
 
-    public empleado(int id, String nombre, String email, Rol rol, Date fechaCreacion, Date fechaActualizacion) {
+    public empleado(int id, String nombre, String email, Date fechaCreacion, Date fechaActualizacion) {
         this.id = id;
         this.nombre = nombre;
         this.email = email;
-        this.rol = rol;
         this.fechaCreacion = fechaCreacion;
         this.fechaActualizacion = fechaActualizacion;
 
