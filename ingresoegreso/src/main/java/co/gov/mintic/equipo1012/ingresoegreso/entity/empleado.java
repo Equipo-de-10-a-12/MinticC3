@@ -24,9 +24,14 @@ public class empleado{
     private String imagen;
     @Column(nullable = false)
     private String telefono;
-    @Column(nullable = false)
+
+    @Column(name="rol", nullable = false)
+    @Enumerated(value = EnumType.STRING)
     private Roles rol;
 
+    @ManyToOne
+    @JoinColumn(name="id_empresa",insertable = false, updatable = false)
+    private Empresa empresa;
 
     public String getNombre() {
         return nombre;

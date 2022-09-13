@@ -1,6 +1,7 @@
 package co.gov.mintic.equipo1012.ingresoegreso.service;
 
 import co.gov.mintic.equipo1012.ingresoegreso.entity.MovimientoDinero;
+import co.gov.mintic.equipo1012.ingresoegreso.entity.empleado;
 import co.gov.mintic.equipo1012.ingresoegreso.repository.IMovimientoDineroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,11 +33,14 @@ public class MovimientoDineroService implements IMovimientoDineroService{
         return md;
     }
     @Override
-    public MovimientoDinero ActualizarCampo(long id,int oidEmpleado){
+    public MovimientoDinero ActualizarCampo(long id, empleado empleado){
 
-        MovimientoDinero md= findById(id);
-        md.setOidEmpleado(oidEmpleado);
-        return md;
+        Optional<MovimientoDinero> md=movimientoDineroRepository.findById(id);
+        md.get().setEmpleado(empleado);
+        //MovimientoDinero md= findById(id);
+        //md.setOidEmpleado(oidEmpleado);
+        movimientoDineroRepository.save(md.get());
+        return md.get();
     }
     @Override
     public void EliminarMonto(long id){

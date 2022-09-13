@@ -2,6 +2,7 @@ package co.gov.mintic.equipo1012.ingresoegreso.controller;
 
 import co.gov.mintic.equipo1012.ingresoegreso.entity.Empresa;
 import co.gov.mintic.equipo1012.ingresoegreso.entity.MovimientoDinero;
+import co.gov.mintic.equipo1012.ingresoegreso.entity.empleado;
 import co.gov.mintic.equipo1012.ingresoegreso.repository.IMovimientoDineroRepository;
 import co.gov.mintic.equipo1012.ingresoegreso.service.IMovimientoDineroService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,9 +37,9 @@ public class MovimientoDineroRestController {
     }
 
     @PatchMapping("/MovimientoDinero/{id}/{oidEmpleado}")
-    public MovimientoDinero ActualizarCampo(@PathVariable long id,@PathVariable  int oidEmpleado){
+    public MovimientoDinero ActualizarCampo(@PathVariable long id,@PathVariable empleado empleado){
 
-      return MovimientoDineroService.ActualizarCampo(id,oidEmpleado);
+      return MovimientoDineroService.ActualizarCampo(id,empleado);
 
     }
 
