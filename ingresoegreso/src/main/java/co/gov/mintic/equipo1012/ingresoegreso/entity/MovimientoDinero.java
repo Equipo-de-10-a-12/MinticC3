@@ -14,16 +14,11 @@ public class MovimientoDinero {
 
     @Column(nullable = false)
     private double montoMovimiento;
-    //@ManyToOne
-    //@JoinColumn(nullable = false)
-    @Column(nullable = false)
-    private int oidEmpleado;
+    @ManyToOne
+    @JoinColumn(name="oid_empleado",insertable = false, updatable = false)
+     private empleado empleado;
     @Column(nullable = false)
     private String conceptoMovimiento;
-    //@ManyToOne
-    //@JoinColumn(nullable = false)
-    @Column(nullable = false)
-    private long idEmpresa;
     @Column(nullable = false)
     private Date fechaCreacion;
     @Column()
@@ -32,12 +27,7 @@ public class MovimientoDinero {
     //public MovimientoDinero(double montoMovimiento, int oidEmpleado, String conceptoMovimiento, long idEmpresa,
       //                      Date fechaCreacion, Date fechaActualizacion) {
     public MovimientoDinero() {
-        this.montoMovimiento = montoMovimiento;
-        this.oidEmpleado = oidEmpleado;
-        this.conceptoMovimiento = conceptoMovimiento;
-        this.idEmpresa = idEmpresa;
-        this.fechaCreacion = fechaCreacion;
-        this.fechaActualizacion = fechaActualizacion;
+
     }
 
 
@@ -57,12 +47,12 @@ public class MovimientoDinero {
         this.montoMovimiento = montoMovimiento;
     }
 
-    public int getOidEmpleado() {
-        return oidEmpleado;
+    public co.gov.mintic.equipo1012.ingresoegreso.entity.empleado getEmpleado() {
+        return empleado;
     }
 
-    public void setOidEmpleado(int oidEmpleado) {
-        this.oidEmpleado = oidEmpleado;
+    public void setEmpleado(co.gov.mintic.equipo1012.ingresoegreso.entity.empleado empleado) {
+        this.empleado = empleado;
     }
 
     public String getConceptoMovimiento() {
@@ -71,14 +61,6 @@ public class MovimientoDinero {
 
     public void setConceptoMovimiento(String conceptoMovimiento) {
         this.conceptoMovimiento = conceptoMovimiento;
-    }
-
-    public long getIdEmpresa() {
-        return idEmpresa;
-    }
-
-    public void setIdEmpresa(long idEmpresa) {
-        this.idEmpresa = idEmpresa;
     }
 
     public Date getFechaCreacion() {
@@ -97,14 +79,14 @@ public class MovimientoDinero {
         this.fechaActualizacion = fechaActualizacion;
     }
 
+
     @Override
     public String toString() {
         return "MovimientoDinero{" +
                 "id=" + id +
-                ", MontoMovimiento=" + montoMovimiento +
-                ", OidEmpleado=" + oidEmpleado +
-                ", ConceptoMovimiento='" + conceptoMovimiento + '\'' +
-                ", idEmpresa=" + idEmpresa +
+                ", montoMovimiento=" + montoMovimiento +
+                ", empleado=" + empleado +
+                ", conceptoMovimiento='" + conceptoMovimiento + '\'' +
                 ", fechaCreacion=" + fechaCreacion +
                 ", fechaActualizacion=" + fechaActualizacion +
                 '}';
