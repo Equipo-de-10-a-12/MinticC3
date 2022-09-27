@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="UTF-8">
+  <title>Plantilla</title>
+  <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css}" >
+  <link rel="stylesheet" th:href="@{/webjars/font-awesome/6.0.0/css/all.min.css}" >
+  <link rel="stylesheet" th:href="@{/css/css-footer.css}">
+</head>
+<body>
+<header th:fragment="header">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-primary p-2">
+    <div class="container-fluid">
+      <a th:href="@{/}" class="navbar-brand">SIEM</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav">
+          <li class="nav-item px-2">
+            <a th:href="@{/}" class="nav-link active">Inicio</a>
+          </li>
+          <li sec:authorize="isAuthenticated()" class="nav-item px-2">
+            <a th:href="@{/Empleados/listar}" class="nav-link active">Empleados</a>
+          </li>
+          <li sec:authorize="isAuthenticated()" class="nav-item px-2">
+            <a th:href="@{/Movimientos/reporte}" class="nav-link active">Movimientos</a>
+          </li>
+          <li sec:authorize="isAuthenticated()" class="nav-item px-2">
+            <a th:href="@{/empresas/lista de empresas}" class="nav-link active">Empresas</a>
+          </li>
+        </ul>
+        <ul sec:authorize="isAuthenticated()" class="navbar-nav ms-auto">
+          <li class="nav-item mr-4">
+            <a href="#" class="nav-link">
+              <i class="fas fa-user"></i>
+              <span>Bienvenido</span>
+              <span sec:authentication="name">Usuario</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <form method="post" th:action="@{/logout}">
+              <a href="#" onclick="this.parentNode.submit();" class="nav-link">
+                <i class="fas fa-sign-out-alt"></i>
+                Salir
+              </a>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<section th:fragment="mainIndex" id="main-index" class="py-2 bg-info text-white">
+  <div class="container">
+    <div class="row">
+      <h1 class="col-md-12">
+        <i class="fas fa-coins"></i>
+        <span>Sistema de gestión de movimientos</span>
+      </h1>
+    </div>
+  </div>
+</section>
+<section th:fragment="mainClientes" id="main-clientes" class="py-2 bg-success text-white">
+  <div class="container">
+    <div class="row">
+      <h1 class="col-md-12">
+        <i class="fas fa-users-cog"></i>
+        <span>Gestión de Movimientos</span>
+      </h1>
+    </div>
+  </div>
+</section>
+<section th:fragment="mainEmpresas" id="main-empresas" class="py-2 bg-success text-white">
+  <div class="container">
+    <div class="row">
+      <h1 class="col-md-12">
+        <i class="fas fa-users-cog"></i>
+        <span>Gestión de Empresas</span>
+      </h1>
+    </div>
+  </div>
+</section>
+<section th:fragment="mainEmpleado" id="main-empleado" class="py-2 bg-success text-white">
+  <div class="container">
+    <div class="row">
+      <h1 class="col-md-12">
+        <i class="fas fa-users-cog"></i>
+        <span>Gestión de Empleados</span>
+      </h1>
+    </div>
+  </div>
+</section>
+<footer th:fragment="footer" class="bg-primary p-5 mt-5 footer-down">
+  <div class="container">
+    <div class="col">
+      <p class="lead text-center text-light" >
+            <span>Derechos reservados equipo de 10 a 12 &copy; <a href="https://www.misiontic2022.gov.co/portal/" target="_blank"></a></span>
+      </p>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Datos de la empresa</title>
+  <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css}" >
+  <link rel="stylesheet" th:href="@{/webjars/font-awesome/6.0.0/css/all.min.css}" >
+  <link rel="stylesheet" th:href="@{/css/css-footer.css}">
+</head>
+<body>
+<header th:replace="layout/plantilla :: header"></header>
+<section th:replace="layout/plantilla :: mainEmpresas"></section>
+<section>
+    <div class="container">
+        <div class="card">
+            <h4 class="card-title"></h4>
+            <div class="card-body">
+<form id="customer-form" th:action="@{/guardarem}" method="post" th:object="${empresa}">
+  <input type="hidden" name="Id" th:field="*{Id}">
+  <br>
+  <div class="form-group row">
+     <label class="col-sm-2 col-form-label" for="nombreEmpresa">Nombre de la empresa </label>
+    <div class="col-sm-10">
+    <input type="text" name="nombreEmpresa" th:field="*{nombreEmpresa}"/>
+    </div>
+  </div>
+      <span th:if="${#fields.hasErrors('nombreEmpresa')}" th:errors="*{nombreEmpresa}">Error nombre</span>
+  <br>
+  <label class="col-sm-2 col-form-label" for="nitEmpresa">nit de la empresa </label>
+  <input type="text" name="nitEmpresa" th:field="*{nitEmpresa}"/>
+  <span th:if="${#fields.hasErrors('nitEmpresa')}" th:errors="*{nitEmpresa}">Error nit empresa</span>
+ <br>
+  <label class="col-sm-2 col-form-label" for="direccionEmpresa">direccion de la empresa </label>
+  <input type="text" name="direccionEmpresa" th:field="*{direccionEmpresa}"/>
+  <span th:if="${#fields.hasErrors('direccionEmpresa')}" th:errors="*{direccionEmpresa}">Error direccion</span>
+  <br>
+  <label class="col-sm-2 col-form-label" for="telefonoEmpresa">telefono de la empresa </label>
+  <input type="text" name="telefonoEmpresa" th:field="*{telefonoEmpresa}"/>
+  <span th:if="${#fields.hasErrors('telefonoEmpresa')}" th:errors="*{telefonoEmpresa}">Error telefono</span>
+  <br>
+  <input type="submit" name="guardar" value="Guardar">
+</form>
+            </div>
+        </div>
+    </div>
+</section>
+<footer th:replace="layout/plantilla :: footer"></footer>
+<script th:src="@{/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/webjars/popper/js/2.9.3/umd/popper.min.js}"></script>
+</body>
+</html>
