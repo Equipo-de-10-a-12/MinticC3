@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css}" >
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/6.0.0/css/all.min.css}" >
+    <link rel="stylesheet" th:href="@{/css/css-footer.css}">
+</head>
+<body>
+<header th:replace="layout/plantilla :: header"></header>
+<table border="1"  class="table table-bordered table-info" table id="TablaReporte" data-show-footer="true" data-searchable="true">
+
+
+
+    <tr>
+        <th>Concepto</th>
+        <th>Fecha Creacion</th>
+        <th>Fecha Actualizacion</th>
+        <th>Empleado</th>
+        <th>Monto</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+    </tr>
+    <tr th:each="movimiento:${movimientos}">
+        <td th:text="${movimiento.conceptoMovimiento}"></td>
+        <td th:text="${movimiento.fechaCreacion}"></td>
+        <td th:text="${movimiento.fechaActualizacion}"></td>
+        <td th:text="${movimiento.empleado.nombre}"></td>
+        <td th:text="${movimiento.montoMovimiento}"></td>
+        <td><a th:href="@{/editar/} + ${movimiento.id}" th:text="Editar"></a></td>
+        <td><a th:href="@{/eliminar/} + ${movimiento.id}" th:text="Eliminar"></a></td>
+
+    </tr>
+
+    <tfoot>
+    <tr>
+        <td></td>
+        <td>Total</td>
+        <td></td>
+        <td></td>
+        <td th:text="${suma}"></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </tfoot>
+
+</table>
+<a class="btn btn-primary" th:href="@{/Movimientos/gestion}" role="button">Nuevo Movimiento</a>
+<footer th:replace="layout/plantilla :: footer"></footer>
+<script th:src="@{/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/webjars/popper/js/2.9.3/umd/popper.min.js}"></script>
+<script>
+      var totalStars = 0;
+
+$(data).each(function(i){
+    totalStars = totalStars+ parseInt(data[i].stargazers_count);
+});
+$('#totalStars').html(totalStars);
+</script>
+</body>
+</html>

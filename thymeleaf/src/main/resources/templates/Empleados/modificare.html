@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css}" >
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/6.0.0/css/all.min.css}" >
+    <link rel="stylesheet" th:href="@{/css/css-footer.css}">
+ </head>
+<body>
+<header th:replace="layout/plantilla :: header"></header>
+<section th:replace="layout/plantilla :: mainEmpleado"></section>
+<section>
+    <div class="container">
+        <div class="card">
+            <h4 class="card-title"></h4>
+            <div class="card-body">
+
+<form th:action="@{/guardare}" method="post" th:object="${empleado}">
+
+    <input type="hidden" name="id" th:field="*{id}">
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label" for="nombre">Nombre</label>
+        <div class="col-sm-10">
+    <input type="text" name="Nombre" th:field="*{nombre}">
+        </div>
+        </div>
+        <br>
+
+    <label class="col-sm-2 col-form-label"  for="email">Email</label>
+    <input type="text" name="Email" th:field="*{email}">
+    <br>
+    <label class="col-sm-2 col-form-label" for="fechaCreacion">Fecha</label>
+    <input type="date" name="Fecha" th:field="*{fechaCreacion}">
+    <br>
+    <br>
+    <label class="col-sm-2 col-form-label" for="imagen">Imagen</label>
+    <input type="text" name="imagen" th:field="*{imagen}">
+    <br>
+    <br>
+    <label class="col-sm-2 col-form-label" for="telefono">Telefono</label>
+    <input type="text" name="telefono" th:field="*{telefono}">
+    <br>
+    <label class="col-sm-2 col-form-label" for="empresa">Empresa</label>
+    <select th:field="*{empresa.Id}" name="empresa">
+        <option value="0" selected>Seleccione Empresa</option>
+        <option th:each="empresa: ${empresas}"
+                th:value="${empresa.Id}"
+                th:text="${empresa.nombreEmpresa}"
+        ></option>
+    </select>
+    <br>
+    <label class="col-sm-2 col-form-label" for="rol">Rol</label>
+    <select th:field="*{rol}" name="Rol" >
+        <option value="" selected>Seleccione Rol</option>
+        <option th:each="rol : ${T(Equipode10a12.MinticC3.frontend.thymeleaf.entity.Roles).values()}"
+                th:value="${rol}"
+                th:text="${rol}">
+        </option>
+    </select>
+    <br>
+    <input type="submit" name="guardare" value="Guardar">
+
+            </div>
+        </div>
+    </div>
+</section>
+</form>
+</body>
+</html>

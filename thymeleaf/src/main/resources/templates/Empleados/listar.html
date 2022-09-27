@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mostrar Empleado</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css}" >
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/6.0.0/css/all.min.css}" >
+    <link rel="stylesheet" th:href="@{/css/css-footer.css}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.css"/>
+
+</head>
+<body>
+<script>
+    $(document).ready(function () {
+    $('#TablaDatos').DataTable();
+});
+
+</script>
+
+<header th:replace="layout/plantilla :: header"></header>
+<table border="1" id="TablaDatos" class="table table-bordered table-info">
+    <tr>
+        <th>nombre</th>
+        <th>email</th>
+        <th>Fecha Creacion</th>
+        <th>Fecha Actualizacion</th>
+        <th>Imagen</th>
+        <th>telefono</th>
+        <th>Empresa</th>
+        <th>Rol</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+    </tr>
+    <tr th:each="empleado:${empleados}">
+        <td th:text="${empleado.nombre}"></td>
+        <td th:text="${empleado.email}"></td>
+        <td th:text="${empleado.fechaCreacion}"></td>
+        <td th:text="${empleado.fechaActualizacion}"></td>
+        <td th:text="${empleado.imagen}"></td>
+        <td th:text="${empleado.telefono}"></td>
+        <td th:text="${empleado.Empresa.nombreEmpresa}"></td>
+        <td th:text="${empleado.rol}"></td>
+        <td><a th:href="@{/editare/} + ${empleado.id}" th:text="Editar"></a></td>
+        <td><a th:href="@{/eliminare/} + ${empleado.id}" th:text="Eliminar"></a></td>
+
+    </tr>
+
+</table>
+<a class="btn btn-primary" th:href="@{/Empleados/modificare}" role="button">Nuevo Empleado</a>
+<footer th:replace="layout/plantilla :: footer"></footer>
+<script th:src="@{/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/webjars/popper/js/2.9.3/umd/popper.min.js}"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
+</body>
+</html>

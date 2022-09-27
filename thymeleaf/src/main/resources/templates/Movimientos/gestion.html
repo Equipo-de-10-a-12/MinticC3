@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css}" >
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/6.0.0/css/all.min.css}" >
+    <link rel="stylesheet" th:href="@{/css/css-footer.css}">
+</head>
+<body>
+<header th:replace="layout/plantilla :: header"></header>
+<section th:replace="layout/plantilla :: mainClientes"></section>
+<section>
+    <div class="container">
+        <div class="card">
+            <h4 class="card-title"></h4>
+            <div class="card-body">
+
+<form th:action="@{/guardar}" method="post" th:object="${movimiento}">
+    <input type="hidden" name="id" th:field="*{id}">
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="montoMovimiento">Monto</label>
+        <div class="col-sm-10">
+        <input class="form-control" type="number" name="Monto" th:field="*{montoMovimiento}" placeholder="Monto"/>
+        </div>
+        <!--<div class="alert alert-warning" th:if="${#fields.hasErrors('montoMovimiento')}" th:errors="*{montoMovimiento}"></div>-->
+    </div>
+    <br>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label" for="conceptoMovimiento">Concepto</label>
+        <div class="col-sm-10">
+    <input type="text" name="Concepto" th:field="*{conceptoMovimiento}">
+        </div>
+    </div>
+    <div class="alert alert-warning" th:if="${#fields.hasErrors('conceptoMovimiento')}" th:errors="*{conceptoMovimiento}"></div>
+    <br>
+
+
+    <label class="col-sm-2 col-form-label" for="empleado">Empleado</label>
+
+    <select th:field="*{empleado.id}" name="empleado">
+                <option value="0" selected>Seleccione Empleado</option>
+                <option th:each="empleado: ${empleados}"
+                th:value="${empleado.id}"
+                th:text="${empleado.nombre}"
+                ></option>
+    </select>
+
+         <br>
+    <input type="submit" name="guardar" value="Guardar">
+
+
+</form>
+            </div>
+        </div>
+    </div>
+</section>
+<footer th:replace="layout/plantilla :: footer"></footer>
+<script th:src="@{/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/webjars/popper/js/2.9.3/umd/popper.min.js}"></script>
+</body>
+</html>

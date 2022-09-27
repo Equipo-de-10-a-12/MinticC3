@@ -1,7 +1,7 @@
-package co.gov.mintic.equipo1012.ingresoegreso.entity;
+package Equipode10a12.MinticC3.frontend.thymeleaf.entity;
 
-import java.util.Date;
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name="empleados")
@@ -25,12 +25,25 @@ public class empleado{
     @Column(nullable = false)
     private String telefono;
 
+    @Column(name = "clave")
+    private String clave;
+
+    @Column(name = "username", unique = true)
+    private String username;
     @Column(name="rol", nullable = false)
     //@Enumerated(value = EnumType.STRING)
     private Roles rol;
 
+    public String getClave() {
+        return clave;
+    }
+
+    public void setClave(String clave) {
+        this.clave = clave;
+    }
+
     @ManyToOne
-    @JoinColumn(name="id_empresa",insertable = false, updatable = false)
+    @JoinColumn(name="id_empresa")
     private Empresa empresa;
 
     public String getNombre() {
@@ -92,11 +105,25 @@ public class empleado{
         this.rol = rol;
     }
 
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public empleado() {
 
     }
-
-
 
     @Override
     public String toString() {
@@ -108,7 +135,10 @@ public class empleado{
                 ", fechaActualizacion=" + fechaActualizacion +
                 ", imagen='" + imagen + '\'' +
                 ", telefono='" + telefono + '\'' +
+                ", clave='" + clave + '\'' +
+                ", username='" + username + '\'' +
                 ", rol=" + rol +
+                ", empresa=" + empresa +
                 '}';
     }
 }

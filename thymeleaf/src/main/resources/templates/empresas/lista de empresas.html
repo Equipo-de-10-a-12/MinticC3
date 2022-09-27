@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>lista empresas</title>
+  <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css}" >
+  <link rel="stylesheet" th:href="@{/webjars/font-awesome/6.0.0/css/all.min.css}" >
+  <link rel="stylesheet" th:href="@{/css/css-footer.css}">
+</head>
+<body>
+<header th:replace="layout/plantilla :: header"></header>
+<br>
+<table border="1" class="table table-bordered table-info">
+  <tr>
+    <th>Nombre de la empresa</th>
+    <th>telefono de la empresa</th>
+    <th>direccion de la empresa</th>
+    <th>nit de la empresa</th>
+    <th>Editar</th>
+    <th>Eliminar</th>
+  </tr>
+  <tr th:each="Empresa : ${empresas}" tr>
+    <td th:text="${Empresa.nombreEmpresa}"></td>
+    <td th:text="${Empresa.telefonoEmpresa}"></td>
+    <td th:text="${Empresa.direccionEmpresa}"></td>
+    <td th:text="${Empresa.nitEmpresa}"></td>
+    <td><a th:href="@{/editarem/} + ${Empresa.Id}" th:text="Editar"></a></td>
+    <td><a th:href="@{/eliminarem/} + ${Empresa.Id}" th:text="Eliminar"></a></td>
+  </tr>
+</table>
+<a class="btn btn-primary" th:href="@{/empresas/crearempresa}" role="button">Nueva Empresa</a>
+<footer th:replace="layout/plantilla :: footer"></footer>
+<script th:src="@{/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/webjars/popper/js/2.9.3/umd/popper.min.js}"></script>
+</body>
+</html>
