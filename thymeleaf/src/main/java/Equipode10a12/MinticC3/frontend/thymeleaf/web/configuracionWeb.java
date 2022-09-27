@@ -9,13 +9,7 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.templateresolver.ITemplateResolver;
 @Configuration
 public class configuracionWeb implements WebMvcConfigurer {
-    @Override
-    public void addViewControllers(ViewControllerRegistry registro){
 
-        registro.addViewController("/").setViewName("index");
-        registro.addViewController("/login");
-        registro.addViewController("/error/403").setViewName("/error/403");
-    }
         @Bean
         public SpringTemplateEngine templateEngine(ITemplateResolver templateResolver, SpringSecurityDialect sec) {
             final SpringTemplateEngine templateEngine = new SpringTemplateEngine();
@@ -23,5 +17,13 @@ public class configuracionWeb implements WebMvcConfigurer {
             templateEngine.addDialect(sec); // Enable use of "sec"
             return templateEngine;
         }
+
+    @Override
+    public void addViewControllers(ViewControllerRegistry registro){
+
+        registro.addViewController("/").setViewName("index");
+        registro.addViewController("/login");
+        registro.addViewController("/errores/403").setViewName("/errores/403");
+    }
     }
 

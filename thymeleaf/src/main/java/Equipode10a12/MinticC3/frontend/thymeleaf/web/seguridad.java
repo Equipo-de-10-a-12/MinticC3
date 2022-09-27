@@ -29,7 +29,7 @@ public class seguridad extends WebSecurityConfigurerAdapter{
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/editar/**","/empresas/crearempresa/**","/eliminar/**","/guardar/")
+                .antMatchers("empresas/editarempresa/**","/movimientos/gestion/**","empresas/eliminarempresa/**","movimientos/eliminarm/", "/")
                 .hasRole("ADMIN")
                 .antMatchers("/empresas/lista de empresas/", "/")
                 .hasAnyRole("ADMIN","EMPLEADO")
@@ -37,7 +37,7 @@ public class seguridad extends WebSecurityConfigurerAdapter{
                 .formLogin()
                 .loginPage("/login")
                 .and()
-                .exceptionHandling().accessDeniedPage("/error/403");
+                .exceptionHandling().accessDeniedPage("/errores/403");
     }
 }
 
